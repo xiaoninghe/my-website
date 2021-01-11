@@ -99,7 +99,7 @@ export default function DigitRecognizer() {
     );
     const image = CSVConverter(imageData);
     axios
-      .get("/api/recognize-digit", {
+      .get("/api/mnist_model", {
         params: {
           image,
         },
