@@ -99,13 +99,13 @@ export default function DigitRecognizer() {
     );
     const image = CSVConverter(imageData);
     axios
-      .get("/api/mnist_model", {
-        params: {
-          image,
-        },
+      .post("https://xiaoning-api.herokuapp.com/api/mnist_model", {
+        image,
       })
       .then((res) => {
-        setDigit(res?.prediction);
+        if ('prediction' in res){
+          setDigit(res.prediction);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -116,7 +116,7 @@ export default function DigitRecognizer() {
     <Layout>
       <Container>
         <div>
-          Digit recognizer
+          Digit recognizer {digit}
           <CanvasDraw
             ref={canvasRef}
             onChange={handleChange}
