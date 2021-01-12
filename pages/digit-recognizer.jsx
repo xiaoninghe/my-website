@@ -95,8 +95,7 @@ export default function DigitRecognizer() {
       }
       csvMatrix.push(csvArray);
     }
-    console.log(csvMatrix.flat());
-    return csvMatrix.flat();
+    return csvMatrix.flat().map((x) => (255 / 68) * x);
   };
 
   const handleChange = () => {
@@ -134,8 +133,22 @@ export default function DigitRecognizer() {
             canvasWidth={CANVAS_WIDTH}
             canvasHeight={CANVAS_HEIGHT}
           />
-          <Button onClick={() => canvasRef.current.undo()}>Undo</Button>
-          <Button onClick={() => canvasRef.current.clear()}>Clear</Button>
+          <Button
+            onClick={() => {
+              canvasRef.current.undo();
+              setDigit(null);
+            }}
+          >
+            Undo
+          </Button>
+          <Button
+            onClick={() => {
+              canvasRef.current.clear();
+              setDigit(null);
+            }}
+          >
+            Clear
+          </Button>
         </div>
         <img src={image} />
         <br />
