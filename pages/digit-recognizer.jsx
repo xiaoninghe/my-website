@@ -128,7 +128,8 @@ export default function DigitRecognizer() {
       }
       csvMatrix.push(csvArray);
     }
-    return csvMatrix.flat().map((x) => (255 / 68) * x);
+    // console.log(shapeArray(csvMatrix.flat().map((x) => (255 / 68) * x), CSV_WIDTH));
+    return csvMatrix.flat().map((x) => (255 / 68) * x);;
   };
 
   const handleChange = () => {
@@ -177,6 +178,7 @@ export default function DigitRecognizer() {
           <CanvasDraw
             ref={canvasRef}
             onChange={handleChange}
+            brushRadius={22}
             canvasWidth={CANVAS_WIDTH}
             canvasHeight={CANVAS_HEIGHT}
           />
