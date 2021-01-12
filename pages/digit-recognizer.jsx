@@ -1,9 +1,19 @@
 import { useRef, useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Paper, Grid, Button } from "@material-ui/core";
+import {
+  Container,
+  Paper,
+  Grid,
+  Button,
+  Icon,
+  SvgIcon,
+  IconButton,
+} from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 import Link from "next/link";
 import Layout from "../components/_Layout";
+import LeaveModal from "../components/LeaveModal";
 import CanvasDraw from "react-canvas-draw";
 import * as tf from "@tensorflow/tfjs";
 
@@ -25,6 +35,18 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   container: {},
+  title: {
+    fontSize: 26,
+    margin: theme.spacing(0, 0, 1, 0),
+    width: 380,
+  },
+  digit: {
+    margin: theme.spacing(0, 0, 1, 0),
+    float: "right",
+  },
+  description: {
+    maxWidth: 400,
+  }
 }));
 
 const CANVAS_WIDTH = 392;
@@ -38,6 +60,17 @@ export default function DigitRecognizer() {
   const [digit, setDigit] = useState(null);
   const [image, setImage] = useState(null);
   const [model, setModel] = useState(null);
+
+  const [open, setOpen] = useState(false);
+  const githubUrl =
+    "https://github.com/xiaoninghe/kaggle/tree/master/digit-recognizer";
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const shapeArray = (array, width) => {
     let matrix = [];
@@ -106,14 +139,16 @@ export default function DigitRecognizer() {
       canvasRef.current.canvas.drawing.height
     );
     const image = CSVConverter(imageData);
-    model
-      .predict([tf.tensor(image).reshape([1, 28, 28])])
-      .array()
-      .then((scores) => {
-        scores = scores[0];
-        let predicted = scores.indexOf(Math.max(...scores));
-        setDigit(predicted);
-      });
+    if (image.reduce((a, b) => a + b) > 0) {
+      model
+        .predict([tf.tensor(image).reshape([1, 28, 28])])
+        .array()
+        .then((scores) => {
+          scores = scores[0];
+          let predicted = scores.indexOf(Math.max(...scores));
+          setDigit(predicted);
+        });
+    }
   };
 
   useEffect(() => {
@@ -122,11 +157,23 @@ export default function DigitRecognizer() {
     );
   }, []);
 
+  const handleGithubClick = () => {
+    // setOpen(true);
+    document.location.href = githubUrl;
+  };
+
   return (
-    <Layout>
+    <Layout title="Digit Recognizer">
       <Container>
         <div>
-          Digit recognizer {digit}
+          <p className={classes.title}>
+            Digit recognizer
+            <IconButton color="inherit" onClick={handleGithubClick}>
+              <GitHubIcon />
+            </IconButton>
+            <p className={classes.digit}>{digit}</p>
+          </p>
+
           <CanvasDraw
             ref={canvasRef}
             onChange={handleChange}
@@ -150,8 +197,11 @@ export default function DigitRecognizer() {
             Clear
           </Button>
         </div>
-        <img src={image} />
         <br />
+        <div className={classes.description}>
+          Digit recognition using a neural network. Trained using TensorFlow.
+          Source code available on GitHub.
+        </div>
         <br />
         <br />
         <div>
@@ -164,6 +214,13 @@ export default function DigitRecognizer() {
             <a>Return Home</a>
           </Link>
         </div>
+
+        <LeaveModal
+          url={githubUrl}
+          open={open}
+          handleOpen={handleOpen}
+          handleClose={handleClose}
+        />
       </Container>
     </Layout>
   );

@@ -20,11 +20,16 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <Layout>
+    <Layout title="Projects">
       <Container>
         <div>
           <Link href="/digit-recognizer">
             <a>Digit Recognizer</a>
+          </Link>
+        </div>
+        <div>
+          <Link href="https://type-gg-rewrite.vercel.app/login" passHref>
+            <a>TypeGG</a>
           </Link>
         </div>
         <br />
