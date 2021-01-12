@@ -4,8 +4,16 @@ import { Container, Paper, Grid, Button } from "@material-ui/core";
 
 import Link from "next/link";
 import Layout from "../components/_Layout";
-import axios from "axios";
 import CanvasDraw from "react-canvas-draw";
+import * as tf from "@tensorflow/tfjs";
+
+class L2 {
+  static className = "L2";
+  constructor(config) {
+    return tf.regularizers.l1l2(config);
+  }
+}
+tf.serialization.registerClass(L2);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +37,7 @@ export default function DigitRecognizer() {
   const canvasRef = useRef(null);
   const [digit, setDigit] = useState(null);
   const [image, setImage] = useState(null);
+  const [model, setModel] = useState(null);
 
   const shapeArray = (array, width) => {
     let matrix = [];
@@ -98,19 +107,21 @@ export default function DigitRecognizer() {
       canvasRef.current.canvas.drawing.height
     );
     const image = CSVConverter(imageData);
-    axios
-      .post("https://xiaoning-api.herokuapp.com/api/mnist_model", {
-        image,
-      })
-      .then((res) => {
-        if ('prediction' in res){
-          setDigit(res.prediction);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+    model
+      .predict([tf.tensor(image).reshape([1, 28, 28])])
+      .array()
+      .then((scores) => {
+        scores = scores[0];
+        let predicted = scores.indexOf(Math.max(...scores));
+        setDigit(predicted);
       });
   };
+
+  useEffect(() => {
+    tf.loadLayersModel("../data/models/mnist_model/model.json").then((model) =>
+      setModel(model)
+    );
+  }, []);
 
   return (
     <Layout>
