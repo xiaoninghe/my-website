@@ -24,20 +24,17 @@ export default function Layout({ title = "Xiaoning's Website", children }) {
 
       <footer className={styles.footer}>
         Website by Xiaoning He
-        <IconButton
-          color="inherit"
-          onClick={() => redirect("https://github.com/xiaoninghe")}
-        >
-          <GitHubIcon />
-        </IconButton>
-        <IconButton
-          edge="start"
-          color="inherit"
-          onClick={() => redirect("https://www.linkedin.com/in/xiaoning-he/")}
-        >
-          <LinkedInIcon />
-        </IconButton>
-        Updated Jan. 2021
+        <a href="https://github.com/xiaoninghe">
+          <IconButton color="inherit">
+            <GitHubIcon />
+          </IconButton>
+        </a>
+        <a href="https://www.linkedin.com/in/xiaoning-he/">
+          <IconButton edge="start" color="inherit">
+            <LinkedInIcon />
+          </IconButton>
+        </a>
+        Updated Jun. 2021
       </footer>
     </div>
   );

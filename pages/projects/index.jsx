@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Paper, Grid } from "@material-ui/core";
 import Link from "next/link";
 
-import Layout from "../components/_Layout";
+import Layout from "../../components/_Layout";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +23,7 @@ export default function Projects() {
     <Layout title="Projects">
       <Container>
         <div>
-          <Link href="/digit-recognizer">
+          <Link href="/projects/digit-recognizer">
             <a>Digit Recognizer</a>
           </Link>
         </div>

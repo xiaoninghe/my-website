@@ -12,8 +12,8 @@ import {
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 import Link from "next/link";
-import Layout from "../components/_Layout";
-import LeaveModal from "../components/LeaveModal";
+import Layout from "../../components/_Layout";
+import LeaveModal from "../../components/LeaveModal";
 import CanvasDraw from "react-canvas-draw";
 import * as tf from "@tensorflow/tfjs";
 
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   description: {
     maxWidth: 400,
-  }
+  },
 }));
 
 const CANVAS_WIDTH = 392;
@@ -129,7 +129,7 @@ export default function DigitRecognizer() {
       csvMatrix.push(csvArray);
     }
     // console.log(shapeArray(csvMatrix.flat().map((x) => (255 / 68) * x), CSV_WIDTH));
-    return csvMatrix.flat().map((x) => (255 / 68) * x);;
+    return csvMatrix.flat().map((x) => (255 / 68) * x);
   };
 
   const handleChange = () => {
@@ -169,9 +169,11 @@ export default function DigitRecognizer() {
         <div>
           <p className={classes.title}>
             Digit recognizer
-            <IconButton color="inherit" onClick={handleGithubClick}>
-              <GitHubIcon />
-            </IconButton>
+            <a href={githubUrl}>
+              <IconButton color="inherit">
+                <GitHubIcon />
+              </IconButton>
+            </a>
             <p className={classes.digit}>{digit}</p>
           </p>
 
