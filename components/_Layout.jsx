@@ -17,6 +17,7 @@ export default function Layout({ title = "Xiaoning's Website", children }) {
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
+        <meta name="google-site-verification" content="82meSiys-yow9zFiJ9RgFZpNvN-W7sww8tL4S_j5Kgk" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
