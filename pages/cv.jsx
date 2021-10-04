@@ -22,18 +22,17 @@ export default function Projects() {
 
   return (
     <Layout title="Projects">
-      <Container>
+      <Container maxWidth="md">
         <div className={classes.contents}>
-          <Typography variant="h3">Xiaoning He (to be updated)</Typography>
+          <Typography variant="h3">Xiaoning He</Typography>
           <p>
-            Second-year undergraduate at Imperial College London. Enthusiastic
-            about Computer Science, eager to solve engineering problems and to
-            further technical knowledge, particularly in a professional
-            environment.
+            Penultimate year undergraduate at Imperial College London.
+            Enthusiastic about Computer Science, eager to solve engineering
+            problems and further technical knowledge.
           </p>
           <p>
             <b>Technical Skills:</b> Python, C, Java, JavaScript, Haskell,
-            React, SQLite, Git
+            React, Git
           </p>
           <Typography variant="h5" className={classes.title}>
             Education
@@ -41,17 +40,20 @@ export default function Projects() {
           <div>
             <Typography>
               <b>
-                2019 – Present (Expected Grad: Jun 2022) | Imperial College
-                London – Mathematics and Computer Science (BEng)
+                2019 – Present (Expected Grad: Jun 2023) | Imperial College
+                London – Mathematics and Computer Science (MEng)
               </b>
             </Typography>
             <br />
-            <b>Relevant Courses: </b>
-            Programming (<b>C, Java, Haskell</b>) – 73.60%, Graphs and
-            Algorithms – 87.88%, Calculus – 84.69%, Mathematical Analysis –
-            76.19%
+            <b>Notable modules: </b>
+            Programming Projects (Operating systems, Compilers, WebApp) –
+            86.57%, Algorithms – 87.25%, Software Engineering Design – 85.59%,
+            Probability and Statistics – 89.30%
             <ul>
-              <li>Achieved average of 75.23% in First-Year assessments</li>
+              <li>
+                Achieved overall 1st class qualifications in 1st and 2nd year
+                studies
+              </li>
               <li>
                 Awarded Entrance Scholarship from the Imperial College
                 Department of Computing (10 out of 200)
@@ -86,40 +88,86 @@ export default function Projects() {
           <div>
             <Typography>
               <b>
-                Aug 2020 - present | Type.GG - Competitive typing website |
-                Passion Project
+                Jun - Sep 2021 | Amazon, Alexa Shopping | Software Development
+                Engineering Internship
               </b>
             </Typography>
             <br />
-            2-person passion project building a competitive typing website
-            aiming to deliver a more accurate measurement of typing speed and
-            overcoming certain shortfalls on other existing sites such as
-            statistics tracking and ease of use.
+            Worked as part of the User Feedback team implementing features to
+            address customer pain points, improving the Alexa user experience.
+            Solutions coded in <b>Java</b> and Alexa Presentation Language
+            (APL).
             <ul>
               <li>
-                Building using <b>React</b>, Next.js, Node.js, Redis and MongoDB
+                Engineered solution to enable voice back navigation on Alexa
+                shopping’s feedback overlay for screen devices
               </li>
               <li>
-                Jointly responsible for designing and implementing the RESTful
-                APIs, database schemas and UI/UX
+                Improved style consistency and screen reader accessibility of
+                feedback customer experiences using APL
               </li>
               <li>
-                Co-running a Type.GG Discord server, with over 100 members, to
-                communicate ideas with the community
-              </li>
-              <li>
-                Currently have designed APIs, database schemas, and implemented
-                front-end for profile and login pages
+                Written unit and integration tests, and successfully deployed my
+                features to production via CI/CD pipeline
               </li>
             </ul>
           </div>
           <div>
             <Typography>
-              <b>Oct - Nov 2020 | PintOS | University Group Project</b>
+              <b>
+                May – Jun 2021 | University Group Project | Intelligent Food App
+              </b>
             </Typography>
             <br />
-            4-person team implementing features of an operating system in C
-            according to a given specification.
+            Worked in a 4-person team creating a full-stack web application to
+            suggest recipes for food items you have in your kitchen. Website
+            found at:{" "}
+            <a href="https://food-app-frontend.herokuapp.com">
+              https://food-app-frontend.herokuapp.com
+            </a>
+            <ul>
+              <li>
+                Built with Node.js, <b>React</b>, Python Django, SQL and
+                deployed using Heroku
+              </li>
+              <li>
+                Collaborated closely with users iterating on feedback and
+                suggestions
+              </li>
+              <li>
+                Implemented stateful, functional React components, React Context
+                and built RESTful APIs
+              </li>
+            </ul>
+          </div>
+          <div>
+            <Typography>
+              <b>Jan – Apr 2021 | University Group Project | WACC Compiler</b>
+            </Typography>
+            <br />
+            Worked in a 5-person team creating an implementation of an ARM
+            compiler for programming language WACC.
+            <ul>
+              <li>
+                - Compiler written in <b>Java</b> and used ANTLR parser
+              </li>
+              <li>
+                - Created continuous integration pipeline on GitLab, testing
+                each stage of the compiler with unit tests
+              </li>
+              <li>
+                - Followed software engineering techniques such as Visitor and
+                Builder patterns
+              </li>
+            </ul>
+          </div>
+          <div>
+            <Typography>
+              <b>Oct - Nov 2020 | University Group Project | PintOS</b>
+            </Typography>
+            <br />
+            Worked in a 4-person team implementing features of an operating
+            system in <b>C</b> according to a given specification.
             <ul>
               <li>
                 Responsible for implementing priority scheduling, priority
@@ -137,7 +185,7 @@ export default function Projects() {
           </div>
           <div>
             <Typography>
-              <b>Jan - Apr 2019 | Online Chess | Individual Project</b>
+              <b>Jan - Apr 2019 | School Project | Online Chess</b>
             </Typography>
             <br />
             Built website ‘Beauchamp Chess’ for my college chess club.
@@ -150,7 +198,7 @@ export default function Projects() {
             </a>
             <ul>
               <li>
-                Written using <b>Python3</b>, Flask, <b>SQLite3</b>, HTML, CSS,
+                Written using <b>Python3</b>, Flask, SQLite3, HTML, CSS,
                 Bootstrap 4, JavaScript and jQuery
               </li>
               <li>
@@ -163,6 +211,11 @@ export default function Projects() {
             Additional Experience and Awards
           </Typography>
           <div>
+            <b>Apr 2021 |</b> Collaboration with the University of St.
+            Petersburg and the Technical University of Munich learning
+            continuous deployment using GitHub Actions to remotely deploy
+            changes to robots.
+            <br />
             <b>Jan 2021 |</b> Machine learning project in recognising numerical
             digits. Trained neural network in Python using TensorFlow. The
             project can be found{" "}
@@ -173,16 +226,8 @@ export default function Projects() {
             <b>Oct 2020 |</b> Completed JPMorgan Software Engineering Virtual
             Experience. Built a web app to display stock prices
             <br />
-            <ul>
-              <li>
-                Participated in coding competitions such as Google Hash Code,
-                Google Code Jam and Project Euler
-              </li>
-              <li>
-                Enrolled in the Imperial College Horizons program learning
-                Japanese. Awarded Distinction in Level 1
-              </li>
-            </ul>
+            <b>Ongoing |</b> Enrolled in the Imperial College Horizons program
+            learning Japanese. Awarded Merit in Level 2
           </div>
         </div>
         <br />

@@ -35,7 +35,7 @@ export default function Layout({ title = "Xiaoning's Website", children }) {
             <LinkedInIcon />
           </IconButton>
         </a>
-        Updated Jun. 2021
+        Updated Oct. 2021
       </footer>
     </div>
   );

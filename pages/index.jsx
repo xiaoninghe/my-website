@@ -21,10 +21,15 @@ export default function Home() {
     <Layout>
       <h2 className={styles.title}>Welcome!</h2>
       <div className={classes.contents}>
+        <br />
+        <br />
         <Link href="/projects">
           <a>Projects</a>
         </Link>
-        CV (to be updated)
+        <br />
+        <Link href="/cv">
+          <a>CV</a>
+        </Link>
       </div>
     </Layout>
   );
