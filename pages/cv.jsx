@@ -26,9 +26,9 @@ export default function Projects() {
         <div className={classes.contents}>
           <Typography variant="h3">Xiaoning He</Typography>
           <p>
-            Penultimate year undergraduate at Imperial College London.
-            Enthusiastic about Computer Science, eager to solve engineering
-            problems and further technical knowledge.
+            Final year undergraduate at Imperial College London. Enthusiastic
+            about Computer Science, eager to solve engineering problems and
+            further technical knowledge.
           </p>
           <p>
             <b>Technical Skills:</b> Python, C, Java, JavaScript, Haskell,
@@ -48,11 +48,12 @@ export default function Projects() {
             <b>Notable modules: </b>
             Programming Projects (Operating systems, Compilers, WebApp) –
             86.57%, Algorithms – 87.25%, Software Engineering Design – 85.59%,
-            Probability and Statistics – 89.30%
+            Probability and Statistics – 89.30%, Robotics - 81.30%, Graphics -
+            73.00%,
             <ul>
               <li>
-                Achieved overall 1st class qualifications in 1st and 2nd year
-                studies
+                Achieved overall 1st class qualifications in 1st, 2nd and 3rd
+                year studies
               </li>
               <li>
                 Awarded Entrance Scholarship from the Imperial College
@@ -85,6 +86,73 @@ export default function Projects() {
           <Typography variant="h5" className={classes.title}>
             Experience
           </Typography>
+          <div>
+            <Typography>
+              <b>
+                Jun - Sep 2022 | Meta, Privacy Messaging | Software Engineering
+                Internship
+              </b>
+            </Typography>
+            <br />
+            Member of the Messaging Encrypted Backups team. Engineered backend
+            infrastructure and UI for crucial security features on Messenger,
+            allowing users to manage their keys to an encrypted backup. Work
+            consisted of full-stack development using <b>Hack</b> and{" "}
+            <b>React</b>.
+            <ul>
+              <li>
+                Worked with cross-functional teams, including Product Managers,
+                Designers, and Engineers
+              </li>
+              <li>
+                Delivered my 14-week project 5 weeks early and presented my work
+                to Messenger Privacy organisation
+              </li>
+              <li>
+                Written most critical Jest end-to-end tests for my team’s work
+                to increase production quality and reduced test execution time
+                by 70% using data builders
+              </li>
+              <li>
+                Proposed solution to unblock H1 project working with Senior
+                software engineers after gaining thorough understanding of
+                backend user key management infrastructure
+              </li>
+            </ul>
+          </div>
+          <div>
+            <Typography>
+              <b>
+                Oct 2021 - Jan 2022 | University Group Project | Haskell Cryptic
+                Crossword Solver
+              </b>
+            </Typography>
+            <br />
+            Led a 7-person team working with our university professor creating a
+            full-stack web application to showcase a crossword solver programmed
+            in Haskell. Website at:{" "}
+            <a href="https://cryptic-solver.herokuapp.com/">
+              https://cryptic-solver.herokuapp.com/
+            </a>
+            <ul>
+              <li>
+                Built with Node.js, <b>React</b>, <b>Python</b> Django, SQL and deployed using
+                Heroku
+              </li>
+              <li>
+                Implemented web worker running computer vision image recognition
+                algorithms to transcribe crossword images
+              </li>
+              <li>
+                Built CI/CD pipeline using GitHub actions with Jest unit and
+                end-to-end tests
+              </li>
+              <li>
+                Implemented stateful, functional React components, React
+                Context, and built RESTful APIs
+              </li>
+            </ul>
+          </div>
           <div>
             <Typography>
               <b>
@@ -226,8 +294,8 @@ export default function Projects() {
             <b>Oct 2020 |</b> Completed JPMorgan Software Engineering Virtual
             Experience. Built a web app to display stock prices
             <br />
-            <b>Ongoing |</b> Enrolled in the Imperial College Horizons program
-            learning Japanese. Awarded Merit in Level 2
+            <b>Oct 2019 - Present |</b> Enrolled in the Imperial College Horizons program
+            learning Japanese. Awarded Merit in Level 3
           </div>
         </div>
         <br />
