@@ -1,16 +1,14 @@
 import { useRef, useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
+  Box,
   Container,
-  Paper,
   Grid,
   Button,
   Icon,
   SvgIcon,
   IconButton,
-} from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
-
+} from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "next/link";
 import Layout from "../../components/_Layout";
 import LeaveModal from "../../components/LeaveModal";
@@ -25,40 +23,14 @@ class L2 {
 }
 tf.serialization.registerClass(L2);
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-  container: {},
-  title: {
-    fontSize: 26,
-    margin: theme.spacing(0, 0, 1, 0),
-    width: 380,
-  },
-  digit: {
-    margin: theme.spacing(0, 0, 1, 0),
-    float: "right",
-  },
-  description: {
-    maxWidth: 400,
-  },
-}));
-
 const CANVAS_WIDTH = 392;
 const CANVAS_HEIGHT = 392;
 const CSV_WIDTH = 28;
 const CSV_HEIGHT = 28;
 
 export default function DigitRecognizer() {
-  const classes = useStyles();
   const canvasRef = useRef(null);
   const [digit, setDigit] = useState(null);
-  const [image, setImage] = useState(null);
   const [model, setModel] = useState(null);
 
   const [open, setOpen] = useState(false);
@@ -164,18 +136,34 @@ export default function DigitRecognizer() {
   };
 
   return (
-    <Layout title="Digit Recognizer">
+    <Layout
+      title="Digit Recognizer"
+      sx={{
+        flexGrow: 1,
+      }}
+    >
       <Container>
         <div>
-          <p className={classes.title}>
+          <Box
+            sx={{
+              fontSize: 26,
+              width: 380,
+            }}
+          >
             Digit recognizer
             <a href={githubUrl}>
               <IconButton color="inherit">
                 <GitHubIcon />
               </IconButton>
             </a>
-            <p className={classes.digit}>{digit}</p>
-          </p>
+            <Box
+              sx={{
+                float: "right",
+              }}
+            >
+              {digit}
+            </Box>
+          </Box>
 
           <CanvasDraw
             ref={canvasRef}
@@ -202,10 +190,14 @@ export default function DigitRecognizer() {
           </Button>
         </div>
         <br />
-        <div className={classes.description}>
+        <Box
+          sx={{
+            maxWidth: 400,
+          }}
+        >
           Digit recognition using a neural network. Trained using TensorFlow.
           Source code available on GitHub.
-        </div>
+        </Box>
         <br />
         <br />
         <div>

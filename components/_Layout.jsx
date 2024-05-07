@@ -1,9 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import { IconButton } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import { IconButton } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Layout({ title = "Xiaoning's Website", children }) {
   const redirect = (url) => {

@@ -1,27 +1,19 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { Container, Paper, Grid } from "@material-ui/core";
+import { Container } from "@mui/material";
+import { grey } from "@mui/material/colors";
 import Link from "next/link";
 
 import Layout from "../../components/_Layout";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-  container: {},
-}));
-
 export default function Projects() {
-  const classes = useStyles();
-
   return (
     <Layout title="Projects">
-      <Container>
+      <Container
+        sx={{
+          padding: "10px",
+          textAlign: "center",
+          color: grey[800],
+        }}
+      >
         <div>
           <Link href="/projects/digit-recognizer">
             <a>Digit Recognizer</a>

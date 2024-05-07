@@ -1,26 +1,23 @@
-import { makeStyles } from "@material-ui/core/styles";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/_Layout";
 import Link from "next/link";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  contents: {
-    display: "flex",
-    flexFlow: "column wrap",
-    alignItems: "center",
-  },
-}));
+import { Box } from "@mui/material";
 
 export default function Home() {
-  const classes = useStyles();
-
   return (
-    <Layout>
+    <Layout
+      sx={{
+        flexGrow: 1,
+      }}
+    >
       <h2 className={styles.title}>Welcome!</h2>
-      <div className={classes.contents}>
+      <Box
+        sx={{
+          display: "flex",
+          flexFlow: "column wrap",
+          alignItems: "center",
+        }}
+      >
         <br />
         <br />
         <Link href="/projects">
@@ -30,7 +27,7 @@ export default function Home() {
         <Link href="/cv">
           <a>CV</a>
         </Link>
-      </div>
+      </Box>
     </Layout>
   );
 }

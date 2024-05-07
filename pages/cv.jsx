@@ -1,29 +1,23 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { Container, Paper, Grid, Typography } from "@material-ui/core";
+import { Container, Paper, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 
 import Layout from "../components/_Layout";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  contents: {
-    display: "flex",
-    flexFlow: "column wrap",
-  },
-  title: {
-    margin: theme.spacing(3, 0, 2, 0),
-  },
-}));
-
 export default function Projects() {
-  const classes = useStyles();
-
   return (
-    <Layout title="Projects">
+    <Layout
+      title="Projects"
+      sx={{
+        flexGrow: 1,
+      }}
+    >
       <Container maxWidth="md">
-        <div className={classes.contents}>
+        <div
+          sx={{
+            display: "flex",
+            flexFlow: "column wrap",
+          }}
+        >
           <Typography variant="h3">Xiaoning He</Typography>
           <p>
             Final year undergraduate at Imperial College London. Enthusiastic
@@ -34,9 +28,7 @@ export default function Projects() {
             <b>Technical Skills:</b> Python, C, Java, JavaScript, Haskell,
             React, Git
           </p>
-          <Typography variant="h5" className={classes.title}>
-            Education
-          </Typography>
+          <Typography variant="h5">Education</Typography>
           <div>
             <Typography>
               <b>
@@ -83,7 +75,13 @@ export default function Projects() {
               </li>
             </ul>
           </div>
-          <Typography variant="h5" className={classes.title}>
+          <Typography
+            variant="h5"
+            sx={{
+              display: "flex",
+              flexFlow: "column wrap",
+            }}
+          >
             Experience
           </Typography>
           <div>
@@ -136,8 +134,8 @@ export default function Projects() {
             </a>
             <ul>
               <li>
-                Built with Node.js, <b>React</b>, <b>Python</b> Django, SQL and deployed using
-                Heroku
+                Built with Node.js, <b>React</b>, <b>Python</b> Django, SQL and
+                deployed using Heroku
               </li>
               <li>
                 Implemented web worker running computer vision image recognition
@@ -275,7 +273,13 @@ export default function Projects() {
               </li>
             </ul>
           </div>
-          <Typography variant="h5" className={classes.title}>
+          <Typography
+            variant="h5"
+            sx={{
+              display: "flex",
+              flexFlow: "column wrap",
+            }}
+          >
             Additional Experience and Awards
           </Typography>
           <div>
@@ -294,8 +298,8 @@ export default function Projects() {
             <b>Oct 2020 |</b> Completed JPMorgan Software Engineering Virtual
             Experience. Built a web app to display stock prices
             <br />
-            <b>Oct 2019 - Present |</b> Enrolled in the Imperial College Horizons program
-            learning Japanese. Awarded Merit in Level 3
+            <b>Oct 2019 - Present |</b> Enrolled in the Imperial College
+            Horizons program learning Japanese. Awarded Merit in Level 3
           </div>
         </div>
         <br />
